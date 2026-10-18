@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-mist font-sans text-base text-navy antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-expanded font-bold tracking-[-0.01em];
+    text-wrap: balance;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-mist;
+  }
+  ::selection {
+    @apply bg-serenity text-navy;
+  }
+}
+
+@layer components {
+  .page {
+    @apply mx-auto w-full max-w-page px-4;
+  }
+  /* Part numbers and spec values. */
+  .part {
+    @apply font-mono text-[0.92em] tracking-tight;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
